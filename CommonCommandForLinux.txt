@@ -1,0 +1,20 @@
+find / -name jenkins
+
+sudo /etc/init.d/jenkins restart
+
+
+sudo nano /etc/environment
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64 export JAVA_HOME
+echo $JAVA_HOME
+
+whoami
+jenkins ALL=(ALL) NOPASSWD: ALL
+sudo javac -d . HelloWorldJenkins/src/com/cg/hello/clients/HelloWorldExample.java
+java com.cg.hello.clients.HelloWorldExample
+
+
+
+
+
+javac -d . HelloWorldJenkins/src/com/cg/hello/clients/HelloWorldExample.java
+java com.cg.hello.clients.HelloWorldExample

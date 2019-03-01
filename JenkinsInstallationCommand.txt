@@ -1,0 +1,115 @@
+Ubuntu 18.04
+
+1. Install Java 8 OpenJDK package with the following commands.
+	
+	->sudo apt update
+	->sudo apt install openjdk-8-jdk
+
+2. Add the Jenkins Debian repository.
+	
+	a. Import the GPG keys of the Jenkins repository using the following wget command.
+	->sudo wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+	
+	b. Add the Jenkins repository to the system.
+	->sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+	
+3. Update the apt package and Install Jenkins.
+
+	->sudo apt update
+	->sudo apt install jenkins
+
+4. Verify Jenkins service status
+
+	->systemctl status jenkins
+
+5. Open Port 80 in /var/lib/jenkins/config.xml file at <slaveAgentPort>
+///////
+	->sudo vi /var/lib/jenkins/config.xml
+	(Edit this file, then save and exit)
+
+6. Type IP address of EC2 instance on browser
+	->http://ip_address_of_EC2_instance
+
+7. Setting Up Jenkins
+	
+	a. Copy password from terminal and paste it into the Administrator password field 
+	->sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+	
+	b. Install suggested plugins or select specific plugins
+	->Click on the Install suggested plugins box
+	
+	c. Installation process will start immediately. 
+	
+	d. Once the plugins are installed, It will be prompted to set up the first admin user
+
+	e. Create First Admin User
+		(Fill all required information and click save.)
+		
+	f. Set the URL for Jenkins instance
+		(Confirm the URL by clicking on the Save and Finish)
+		
+	g. Click on the Start using Jenkins button.
+	   It will be redirected to the Jenkins dashboard logged in as the admin user.
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   5. Optional(For Forwarding Port)
+
+sudo iptables -L -n
+sudo iptables -F
+sudo iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
+sudo iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
+sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+sudo sh -c "iptables-save > /etc/iptables.rules"
+sudo apt-get install iptables-persistent
+
+sudo sud
+cd
+cd /var/lib/jenkins
+ls -al
+vi config.xml
+cd 
+find / -name jenkins
+echo $JENKINS_HOME
+cd logs/
+ls -al
+cd tasks/
+
+
+

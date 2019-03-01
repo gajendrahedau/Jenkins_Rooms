@@ -1,0 +1,128 @@
+ps -ef | grep firefox
+
+sudo netstat -ltnp | grep -w ':8080' 
+
+sudo kill -9 pid
+
+pkill -9 -f <nameOfYourJavaAplication>
+
+tailf logs.txt
+
+killall -9 java
+
+less /opt/codedeploy-agent/deployment-root/deployment-logs/codedeploy-agent-deployments.log
+
+less   /var/log/aws/codedeploy-agent/codedeploy-agent.log
+
+
+
+
+
+
+
+https://513226390843.signin.aws.amazon.com/console
+
+
+
+sudo yum -y update
+sudo yum install -y ruby
+curl -O https://aws-codedeploy-ap-south-1.s3.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+
+
+sudo yum install java-1.8.0 
+sudo yum remove java-1.7.0-openjdk 
+
+
+
+
+
+
+
+sudo service codedeploy-agent status
+sudo service codedeploy-agent start
+
+
+http://s3-ap-south-1.amazonaws.com/aws-codedeploy-ap-south-1/samples/latest/SampleApp_Linux.zip
+
+
+cd /.ssh
+ssh-keygen
+
+[here just create the name codecommit_rsa and leave all fields blank *just click enter*]
+
+cat codecommit_rsa.pub
+
+Now we need to enter our codecommit_rsa.pub into IAM.
+
+touch config
+chmod 600 config
+nano config
+
+Host git-codecommit.*.amazonaws.com
+  User [YOUR_SSH_KEY_ID_FROM_IAM]
+  IdentityFile ~/.ssh/codecommit_rsa
+
+Now lets test to verify it works.
+
+ssh git-codecommit.us-east-1.amazonaws.com
+
+
+
+
+sudo yum install java-1.8.0
+sudo yum remove java-1.7.0-openjdk
+
+
+
+
+appspec.yml
+
+
+
+runapp.sh
+#!/bin/bash -xe
+echo 'Starting Spring Boot app'
+cd '/home/ubuntu/spring-boot/target'
+java -jar demo-0.0.1-SNAPSHOT.jar
+
+
+
+appspec.yml
+
+version: 0.0
+os: linux
+files:
+  - source: ./
+    destination: /home/ubuntu/spring-boot
+hooks:
+  ApplicationStart:
+    - location: runapp.sh
+      runas: root
+
+
+
+
+
+curl -O https://s3.ap-south-1.amazonaws.com/codebuildbucket123456/myfile1.sh
+
+
+
+
+
+
+
+
+
+
+cat -v filename
+
+
+
+
+
+
+
+
+

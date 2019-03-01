@@ -1,0 +1,33 @@
+1. Create a Github Repository.
+
+2. Create a project in Spring Tool Suit (STS).
+
+3. Integrate STS project to Github repository.
+
+4. Push Sample Program to github repo.
+
+5. Enter ip address of the instance in browser on which jenkins in running
+
+6. Click on New Item in Jenkins dashboard.
+
+7. Enter the Item name 'Helloworld' and Choose the ‘Freestyle project option’.
+
+8. Specify the details of the job.
+
+a. Specify the location of file which need to be built (In my case I gave URL of my github Repository --> https://github.com/gajendrahedau/HelloWorldJenkins.git)
+
+b. Click on Add build step
+
+c. Select 'Execute Shell command'
+
+d. In the Shell command enter
+
+	i)   jenkins ALL=(ALL) NOPASSWD: ALL (This Permission we can configure globally also.)
+	ii)  sudo javac -d . HelloWorldJenkins/src/com/cg/hello/clients/HelloWorldExample.java (This command is for compiling java program)
+	iii) java com.cg.hello.clients.HelloWorldExample (This command is for displaying console output)
+
+9. Save and click on the Build Now option.
+
+10. Once the build is completed, a status of the build will show if the build was successful or not.
+
+11. Click on the Console Output link to see the details of the build.
